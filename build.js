@@ -1,41 +1,44 @@
 console.log('MY_SECRET: ', process.env.MY_SECRET);
 console.log('ALL ENVS: ', process.env);
 
-const exec = require('child_process').exec;
-function puts(error, stdout, stderr) { console.log(stdout) }
-
-const net = require('net');
-const Promise = require('bluebird');
-const host = "10.80.162.253"
-const port = "443"
-
-function checkConnection(host, port, timeout) {
-    return new Promise(function(resolve, reject) {
-        let socket = net.createConnection(port, host, function() {
-            clearTimeout(timer);
-            resolve();
-            socket.end();
-        });
-        timeout = timeout || 10000;     // default of 10 seconds
-        let timer = setTimeout(function () {
-            reject("timeout");
-            socket.end();
-        }, timeout);
-        socket.on('error', function(err) {
-            clearTimeout(timer);
-            reject(err);
-        });
-    });
-}
-
-checkConnection(host, port).then(function() {
-    // successful
-    console.log('Successful connection to', host, port);
-}, function(err) {
-    console.log('Failed to connect to', host, port);
-    // error
-})
-
+// Network connection test for security
+//
+// const exec = require('child_process').exec;
+// function puts(error, stdout, stderr) { console.log(stdout) }
+//
+// const net = require('net');
+// const Promise = require('bluebird');
+// const host = "10.80.162.253"
+// const port = "443"
+//
+// function checkConnection(host, port, timeout) {
+//     return new Promise(function(resolve, reject) {
+//         let socket = net.createConnection(port, host, function() {
+//             clearTimeout(timer);
+//             resolve();
+//             socket.end();
+//         });
+//         timeout = timeout || 10000;     // default of 10 seconds
+//         let timer = setTimeout(function () {
+//             reject("timeout");
+//             socket.end();
+//         }, timeout);
+//         socket.on('error', function(err) {
+//             clearTimeout(timer);
+//             reject(err);
+//         });
+//     });
+// }
+//
+// checkConnection(host, port).then(function() {
+//     // successful
+//     console.log('Successful connection to', host, port);
+// }, function(err) {
+//     console.log('Failed to connect to', host, port);
+//     // error
+// })
+//
+// End of network security test
 
 
 // console.log('Ping Google IP');
