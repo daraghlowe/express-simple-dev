@@ -7,7 +7,7 @@ function puts(error, stdout, stderr) { console.log(stdout) }
 const net = require('net');
 const Promise = require('bluebird');
 const host = "10.80.162.253"
-const port = "444"
+const port = "443"
 
 function checkConnection(host, port, timeout) {
     return new Promise(function(resolve, reject) {
