@@ -9,7 +9,8 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npm cache verify"
+    "build": "npm cache verify",
+    "start": "node app.js"
   },
   "author": "",
   "license": "ISC",
