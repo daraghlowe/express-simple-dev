@@ -3,7 +3,7 @@ const express = require('express');
 const server = express();
 const PORT = process.env.PORT || 3300;
 
-server.use(express.static(__dirname+'/public'));
+server.use(express.static(__dirname+'/public', {maxAge: 60, cacheControl: true}));
 
 server.get('/headers', (_req, res) => {
     var body = {
