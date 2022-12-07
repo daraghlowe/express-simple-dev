@@ -76,6 +76,21 @@ router.get('/accept-header', function (req, res) {
   res.sendFile(image, options)
 })
 
+// Respond with either a jpg or webp image based on the accept header (with an extension)
+router.get('/accept-header.jpg', function (req, res) {
+  const options = {
+    root: path.join(__dirname, '../assets'),
+    headers: {
+      'Cache-Control': 'public, max-age=200',
+    }
+  }
+
+  res.setHeader('vary', 'accept')
+
+  let image = varyImageGetter(req)
+  res.sendFile(image, options)
+})
+
 // Respond with either a jpg or webp image based on the accept header
 // but don't set the vary header in the response.
 // This is to replicate a non-standard customer setup
