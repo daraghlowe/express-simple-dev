@@ -3,9 +3,9 @@ const express = require('express');
 const server = express();
 const PORT = process.env.PORT || 3300;
 
-server.use(express.static('public'));
+server.use(express.static(__dirname+'/public'));
 
-server.get('/', (_req, res) => {
+server.get('/headers', (_req, res) => {
     var body = {
         'status': 'OK3',
         'request': {
@@ -22,6 +22,10 @@ server.get('/', (_req, res) => {
     });
     res.end(JSON.stringify(body, null, 4));
 });
+
+app.get('/', function (req, res) {
+  res.sendFile(__dirname + '/index.html');
+})
 
 server.get('/fetch-wordpress-graphql', async (_req, res) => {
   const query = `
