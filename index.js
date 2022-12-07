@@ -23,7 +23,7 @@ server.get('/headers', (_req, res) => {
     res.end(JSON.stringify(body, null, 4));
 });
 
-app.get('/', function (req, res) {
+server.get('/', function (_req, res) {
   res.sendFile(__dirname + '/index.html');
 })
 
