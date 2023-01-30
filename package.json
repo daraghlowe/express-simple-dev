@@ -9,8 +9,11 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npm cache verify",
+    "build": "echo 'build'",
     "start": "node app.js"
+  },
+  "engines": {
+    "node": "12"
   },
   "author": "",
   "license": "ISC",
