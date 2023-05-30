@@ -1,0 +1,10 @@
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: hucqncisrb6ssyzwwjnk0tpfs-pdb
+  namespace: headless-customer
+spec:
+  minAvailable: 2
+  selector:
+    matchLabels:
+      headless.wpengine.com/appID: ucqncisrb6ssyzwwjnk0tpfs
