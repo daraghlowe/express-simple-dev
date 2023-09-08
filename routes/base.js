@@ -22,6 +22,10 @@ router.get('/headers', (req, res) => {
   res.send(JSON.stringify(req.headers, null, 4))
 })
 
+router.get('/health', (req, res) => {
+  res.sendStatus(200)
+})
+
 router.get('/favicon.ico', function (req, res) {
   const options = {
     root: path.join(__dirname, '../assets'),
