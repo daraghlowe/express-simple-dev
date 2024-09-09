@@ -13,8 +13,7 @@
     "start": "node app.js"
   },
   "engines": {
-    "node": "20",
-    "npm": ">12"
+    "node": "20"
   },
   "author": "",
   "license": "ISC",
