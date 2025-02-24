@@ -9,12 +9,13 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "echo 'build'",
+    "build": "node build.js",
     "start": "node app.js"
   },
   "engines": {
-    "node": "20"
+    "node": "22"
   },
+  "packageManager": "npm@10.8.1",
   "author": "",
   "license": "ISC",
   "description": ""
