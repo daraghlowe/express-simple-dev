@@ -13,8 +13,6 @@ app.use('/_next/image', require('./routes/next-image'));
 const server = app.listen(port, () => {
   console.log(`App listening at http://localhost:${port}`)
   console.log(`Nginx listening at http://localhost:8081`)
-  console.log("The network interfaces which have been assigned to this Network address are: ")
-  console.log(os.networkInterfaces());
 })
 
 // Handle Sigterm for quicker shutdowns in Docker
